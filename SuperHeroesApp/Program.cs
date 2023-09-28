@@ -25,13 +25,27 @@ superman.IdentidadSecreta = "Clark Kent";
 superman.Ciudad = "Metropolis";
 superman.PuedeVolar = true;
 
+var superman2 = new SuperHeroe();
+
+superman2.Id = 1;
+superman2.Nombre = "Superman";
+superman2.IdentidadSecreta = "Clark Kent";
+superman2.Ciudad = "Metropolis";
+superman2.PuedeVolar = true;
+Console.WriteLine(superman == superman2);
+
+SuperHeroRecord superHeroRecord = new(1, "Superman", "Clark Kent");
+SuperHeroRecord superHeroRecord2 = new(1, "Superman", "Clark Kent");
+
+Console.WriteLine(superHeroRecord == superHeroRecord2);
+
 List<SuperPoder> poderesSuperman = new List<SuperPoder>();
 poderesSuperman.Add(superFuerza);
 poderesSuperman.Add(poderVolar);
 superman.SuperPoderes = poderesSuperman;
 string resultSuperpoderes = superman.UsarSuperPoderes();
 
-Console.WriteLine(resultSuperpoderes);
+//Console.WriteLine(resultSuperpoderes);
 
 class SuperHeroe
 {
@@ -90,3 +104,5 @@ enum NivelPoder
     NivelDos,
     NivelTres
 }
+
+public record SuperHeroRecord(int id, string nombre, string identidadSecreta);
