@@ -17,6 +17,13 @@ superFuerza.Nombre = "Super Fuerza";
 superFuerza.Descripcion = "Capacidad de lebantar objetos pesados";
 superFuerza.Nivel = NivelPoder.NivelTres;
 
+var regeneracion = new SuperPoder();
+regeneracion.Id = 3;
+regeneracion.Nombre = "regeneracion";
+regeneracion.Descripcion = "Capacidad de Recuperarse de cualquier daño";
+regeneracion.Nivel = NivelPoder.NivelTres;
+
+
 
 var superman = new SuperHeroe();
 
@@ -25,10 +32,6 @@ superman.Nombre = "   Superman    ";
 superman.IdentidadSecreta = "Clark Kent";
 superman.Ciudad = "Metropolis";
 superman.PuedeVolar = true;
-
-
-
-
 
 
 SuperHeroRecord superHeroRecord = new(1, "Superman", "Clark Kent");
@@ -40,10 +43,35 @@ List<SuperPoder> poderesSuperman = new List<SuperPoder>();
 poderesSuperman.Add(superFuerza);
 poderesSuperman.Add(poderVolar);
 superman.SuperPoderes = poderesSuperman;
+
 string resultSuperpoderes = superman.UsarSuperPoderes();
-
 Console.WriteLine(resultSuperpoderes);
+string resultSalvarElMundo = superman.SalvarElMundo();
+Console.WriteLine(resultSalvarElMundo);
 
+Console.WriteLine(superman.SalvarPersona());
+
+
+
+
+
+
+var wolverine = new AntiHeroe();
+wolverine.Id = 5;
+wolverine.Nombre = "Wolverine";
+wolverine.IdentidadSecreta = "Logan";
+wolverine.PuedeVolar = false;
+
+List<SuperPoder> poderesWolverine = new List<SuperPoder>();
+poderesWolverine.Add(superFuerza);
+poderesWolverine.Add(regeneracion);
+wolverine.SuperPoderes = poderesWolverine;
+
+string resultWolverinePoderes = wolverine.UsarSuperPoderes();
+Console.WriteLine(resultWolverinePoderes);
+
+string accionAntiHeroe = wolverine.RealizarAccionDeAntiHeroe("Ataca la Policia");
+Console.WriteLine(accionAntiHeroe);
 
 
 
