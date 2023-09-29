@@ -3,6 +3,7 @@
 
 
 using System.Text;
+using SuperHeroesApp.Models;
 
 var poderVolar = new SuperPoder();
 poderVolar.Id = 1;
@@ -47,53 +48,7 @@ string resultSuperpoderes = superman.UsarSuperPoderes();
 
 //Console.WriteLine(resultSuperpoderes);
 
-class SuperHeroe
-{
-    public int Id;
-    public string Nombre;
-    public string IdentidadSecreta;
-    public string Ciudad;
-    public List<SuperPoder> SuperPoderes;
-    public bool PuedeVolar;
 
-
-    public SuperHeroe() 
-    {
-        Id = 1;
-        SuperPoderes = new List<SuperPoder>();
-        PuedeVolar = false;
-
-
-    }
-
-    public string UsarSuperPoderes()
-    {
-        StringBuilder sb = new StringBuilder();
-        foreach (var item in SuperPoderes)
-        {
-            sb.AppendLine($"{Nombre} esta usando el super poder {item.Nombre}!!");
-        }
-
-        return sb.ToString();
-    }
-
-}
-
-class SuperPoder
-{
-    public int Id;
-    public string Nombre;
-    public string Descripcion;
-    public NivelPoder Nivel;
-
-    public SuperPoder() 
-    {
-        Id = 1;
-        Nivel = NivelPoder.NivelUno;
-    }
-
-   
-}
 
 
 
